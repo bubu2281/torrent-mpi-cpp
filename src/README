@@ -1,0 +1,13 @@
+pentru inceput, am facut mai multe structuri, pentru peer, fisier si tracker
+in peer am campuri pentru fisiere detinute si fisiere dorite, in file am campuri pentru nume si segmente, dar si owner, iar in tracker am fisierele pe care trackerul le gestioneaza
+
+initial am inceput prin a face citirea din fisier pentru client, urmand ca acesta sa trimita cu ajutorul mpi toate fisierele pe care le detine trackerului
+
+dupa ce trackrul a primit de la toti peers fisierele detinute, acesta asteapta sa primeasca cereri pentru fisierele pe care peers le doresc din download
+
+in download se trimite mai intai numele fisierului care se doreste a fi descarcat, urmand sa se primeasca nr de owneri al acelui fisier si numarul de hashes al acelui fisier.
+ulterior se asteapta segmentele fisierului dupa ce s-a facut o cerere pentru ce hash doreste (ex: al 10-lea hash)
+
+in upload, se asteapta pana cand primeste un nume de fisier si indexul hash-ului in acel fisier si trimite respectivul hash
+
+de asemenea in download, atunci cand un client descarca 10 segmente dintr-un fisier, se trimite un mesaj catre tracker sa isi dea update
